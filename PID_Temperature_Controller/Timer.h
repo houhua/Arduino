@@ -4,26 +4,25 @@
 
 class Timer
 {
-  private:
-    unsigned long prev = 0;
-    unsigned long now;
-    
-    
-  public:
-    
-    unsigned long interval;
-    void reset();
-    void update();
+	private:
+		unsigned long prev = 0;
+		unsigned long now;
+		unsigned long interval;
+
+	public:
+		unsigned long get_interval();
+		void reset();
 };
 
-void Timer::update()
+unsigned long Timer::get_interval()
 {
-  interval = millis() - prev;
+	interval = millis() - prev;
+	return interval;
 }
 
 void Timer::reset()
 {
-  prev = millis();
+	prev = millis();
 }
 
 #endif
